@@ -1,0 +1,65 @@
+ext {
+    cxfVersion = "3.1.2"
+    guavaVersion = "18.0"
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+repositories {
+    jcenter()
+}
+
+configurations {
+    wsdl2java
+    
+    all*.exclude group: "net.sf.ehcache", module: "ehcache"
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter"
+    
+    compile "org.apache.cxf:cxf-core:${cxfVersion}"
+    compile "org.apache.cxf:cxf-rt-frontend-jaxws:${cxfVersion}"
+    compile "org.apache.cxf:cxf-rt-transports-http:${cxfVersion}"
+    compile "org.apache.cxf:cxf-rt-ws-security:${cxfVersion}"
+
+    compile "com.google.guava:guava:${guavaVersion}"
+
+    wsdl2java "org.apache.cxf:cxf-tools-wsdlto-core:${cxfVersion}"
+    wsdl2java "org.apache.cxf:cxf-tools-wsdlto-frontend-jaxws:${cxfVersion}"
+    wsdl2java "org.apache.cxf:cxf-tools-wsdlto-databinding-jaxb:${cxfVersion}"
+}
+
+task exportWsdl(type: JavaExec) {
+    classpath configurations.wsdl2java
+    main "org.apache.cxf.tools.wsdlto.WSDLToJava"
+    args "-d", "src/main/java", "-p", "es.brainbond.facecli.face.generated",
+         "-wsdlLocation", "classpath:sspp2.wsdl",
+         "src/main/resources/sspp2.wsdl"
+}
+
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = "UTF-8"
+
+eclipse {
+    classpath {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}

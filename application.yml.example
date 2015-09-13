@@ -1,0 +1,15 @@
+truststore:
+  location: truststore
+  password: password
+
+keystore:
+  # Tipo: JKS o PKCS12
+  type: PKCS12
+  location: keystore
+  password: password
+  signature:
+    alias: "mi firma"
+    password: abcd1234
+
+logging:
+  config: logback.xml
