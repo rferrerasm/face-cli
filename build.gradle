@@ -46,8 +46,8 @@ task exportWsdl(type: JavaExec) {
     classpath configurations.wsdl2java
     main "org.apache.cxf.tools.wsdlto.WSDLToJava"
     args "-d", "src/main/java", "-p", "es.brainbond.facecli.face.generated",
-         "-wsdlLocation", "classpath:sspp2.wsdl",
-         "src/main/resources/sspp2.wsdl"
+         "-wsdlLocation", "classpath:facturasspp2.wsdl",
+         "src/main/resources/facturasspp2.wsdl"
 }
 
 sourceCompatibility = 1.8

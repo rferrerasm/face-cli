@@ -8,18 +8,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPFicheroFactura complex type.
+ * <p>Java class for Estado complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPFicheroFactura"&gt;
+ * &lt;complexType name="Estado"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="factura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="mime" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,44 +29,20 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPFicheroFactura", propOrder = {
+@XmlType(name = "Estado", propOrder = {
 
 })
-public class SSPPFicheroFactura {
+public class Estado {
 
-    @XmlElement(required = true, nillable = true)
-    protected String factura;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
     protected String nombre;
-    @XmlElement(required = true, nillable = true)
-    protected String mime;
+    @XmlElement(required = true)
+    protected String codigo;
+    @XmlElement(required = true)
+    protected String descripcion;
 
     /**
-     * Obtiene el valor de la propiedad factura.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getFactura() {
-        return factura;
-    }
-
-    /**
-     * Define el valor de la propiedad factura.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setFactura(String value) {
-        this.factura = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -78,7 +54,7 @@ public class SSPPFicheroFactura {
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -90,27 +66,51 @@ public class SSPPFicheroFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad mime.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMime() {
-        return mime;
+    public String getCodigo() {
+        return codigo;
     }
 
     /**
-     * Define el valor de la propiedad mime.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMime(String value) {
-        this.mime = value;
+    public void setCodigo(String value) {
+        this.codigo = value;
+    }
+
+    /**
+     * Gets the value of the descripcion property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    /**
+     * Sets the value of the descripcion property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDescripcion(String value) {
+        this.descripcion = value;
     }
 
 }

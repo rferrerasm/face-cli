@@ -44,7 +44,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
-import es.brainbond.facecli.face.generated.SSPPWebServiceProxyPort;
+import es.brainbond.facecli.face.generated.FacturaSSPPWebServiceProxyPort;
 
 @Configuration
 @ComponentScan("es.brainbond.facecli")
@@ -53,10 +53,10 @@ public class FaceCliConfiguration {
     @Autowired Environment environment;
     
     @Bean
-    public SSPPWebServiceProxyPort faceClient() {
+    public FacturaSSPPWebServiceProxyPort faceClient() {
         JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
-        factory.setServiceClass(SSPPWebServiceProxyPort.class);
-        factory.setAddress("https://se-face-webservice.redsara.es/sspp2");
+        factory.setServiceClass(FacturaSSPPWebServiceProxyPort.class);
+        factory.setAddress("https://se-face-webservice.redsara.es/facturasspp2?wsdl");
         
         CallbackHandler passwordCallback =
                 new PasswordCallback(
@@ -75,7 +75,7 @@ public class FaceCliConfiguration {
         
         configureLogging(factory);
         
-        SSPPWebServiceProxyPort faceClient = (SSPPWebServiceProxyPort) factory.create();
+        FacturaSSPPWebServiceProxyPort faceClient = (FacturaSSPPWebServiceProxyPort) factory.create();
         
         configureHttpConduit(faceClient);
         
@@ -123,7 +123,7 @@ public class FaceCliConfiguration {
     // Ver:
     //  - http://cxf.apache.org/docs/client-http-transport-including-ssl-support.html
     //  - org.apache.cxf.configuration.jsse.TLSParameterJaxBUtils
-    private void configureHttpConduit(SSPPWebServiceProxyPort faceClient) {
+    private void configureHttpConduit(FacturaSSPPWebServiceProxyPort faceClient) {
         Client client = ClientProxy.getClient(faceClient);
         HTTPConduit httpConduit = (HTTPConduit) client.getConduit();
         TLSClientParameters tlsClientParameters = new TLSClientParameters();

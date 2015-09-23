@@ -8,18 +8,18 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPEstado complex type.
+ * <p>Java class for Resultado complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPEstado"&gt;
+ * &lt;complexType name="Resultado"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="descripcion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="codigoSeguimiento" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,44 +29,20 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPEstado", propOrder = {
+@XmlType(name = "Resultado", propOrder = {
 
 })
-public class SSPPEstado {
+public class Resultado {
 
-    @XmlElement(required = true, nillable = true)
-    protected String nombre;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
     protected String codigo;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
     protected String descripcion;
+    @XmlElement(required = true, nillable = true)
+    protected String codigoSeguimiento;
 
     /**
-     * Obtiene el valor de la propiedad nombre.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Define el valor de la propiedad nombre.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setNombre(String value) {
-        this.nombre = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad codigo.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
@@ -78,7 +54,7 @@ public class SSPPEstado {
     }
 
     /**
-     * Define el valor de la propiedad codigo.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +66,7 @@ public class SSPPEstado {
     }
 
     /**
-     * Obtiene el valor de la propiedad descripcion.
+     * Gets the value of the descripcion property.
      * 
      * @return
      *     possible object is
@@ -102,7 +78,7 @@ public class SSPPEstado {
     }
 
     /**
-     * Define el valor de la propiedad descripcion.
+     * Sets the value of the descripcion property.
      * 
      * @param value
      *     allowed object is
@@ -111,6 +87,30 @@ public class SSPPEstado {
      */
     public void setDescripcion(String value) {
         this.descripcion = value;
+    }
+
+    /**
+     * Gets the value of the codigoSeguimiento property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCodigoSeguimiento() {
+        return codigoSeguimiento;
+    }
+
+    /**
+     * Sets the value of the codigoSeguimiento property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCodigoSeguimiento(String value) {
+        this.codigoSeguimiento = value;
     }
 
 }

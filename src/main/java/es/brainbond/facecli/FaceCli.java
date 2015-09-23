@@ -42,42 +42,42 @@ public class FaceCli {
         
         switch (args[0]) {
         case "enviarFactura":
-            faceService.printSSPPResultadoEnviarFactura(
+            faceService.printEnviarFacturaResponse(
                     faceService.enviarFactura(args[1], args[2]));
             break;
             
         case "consultarFactura":
-            faceService.printSSPPResultadoConsultarFactura(
+            faceService.printConsultarFacturaResponse(
                     faceService.consultarFactura(args[1]));
             break;
 
         case "anularFactura":
-            faceService.printSSPPResultadoAnularFactura(
+            faceService.printAnularFacturaResponse(
                     faceService.anularFactura(args[1], args[2]));
             break;
             
         case "estados":
-            faceService.printSSPPEstados(
+            faceService.printConsultarEstadosResponse(
                     faceService.estados());
             break;
             
         case "unidades":
-            faceService.printSSPPResultadoConsultarUnidades(
+            faceService.printConsultarRelacionesResponse(
                     faceService.unidades());
             break;
             
         case "administraciones":
-            faceService.printArrayOfSSPPUnidadDir(
+            faceService.printConsultarAdminitracionesResponse(
                     faceService.administraciones());
             break;
             
         case "unidadesPorAdministracion":
-            faceService.printSSPPResultadoConsultarUnidades(
+            faceService.printConsultarRelacionesPorAdministracionResponse(
                     faceService.unidadesPorAdministracion(args[1]));
             break;
             
         case "consultarListadoFacturas":
-            faceService.printArrayOfSSPPResultadoConsultarFactura(
+            faceService.printConsultarListadoFacturaResponse(
                     faceService.consultarListadoFacturas(
                             splitCodigosRegistro(args[1])));
             break;
@@ -167,7 +167,7 @@ public class FaceCli {
         sb.append("    unidades\n");
         sb.append("    administraciones\n");
         sb.append("    unidadesPorAdministracion <codigoDir>\n");
-        sb.append("    consultarListadoFacturas <codigoRegistro1,...>\n");
+        sb.append("    consultarListadoFacturas <numeroRegistro1,...>\n");
         sb.append("    ayuda\n");
         
         System.out.print(sb.toString());

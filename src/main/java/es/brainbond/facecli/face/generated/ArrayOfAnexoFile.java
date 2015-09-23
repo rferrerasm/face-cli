@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ArrayConsultarListadoFactura complex type.
+ * <p>Java class for ArrayOfAnexoFile complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ArrayConsultarListadoFactura"&gt;
+ * &lt;complexType name="ArrayOfAnexoFile"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="registro" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="anexo" type="{https://webservice.face.gob.es}AnexoFile" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,40 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayConsultarListadoFactura", propOrder = {
-    "registro"
+@XmlType(name = "ArrayOfAnexoFile", propOrder = {
+    "anexo"
 })
-public class ArrayConsultarListadoFactura {
+public class ArrayOfAnexoFile {
 
-    protected List<String> registro;
+    protected List<AnexoFile> anexo;
 
     /**
-     * Gets the value of the registro property.
+     * Gets the value of the anexo property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the registro property.
+     * This is why there is not a <CODE>set</CODE> method for the anexo property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getRegistro().add(newItem);
+     *    getAnexo().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link String }
+     * {@link AnexoFile }
      * 
      * 
      */
-    public List<String> getRegistro() {
-        if (registro == null) {
-            registro = new ArrayList<String>();
+    public List<AnexoFile> getAnexo() {
+        if (anexo == null) {
+            anexo = new ArrayList<AnexoFile>();
         }
-        return this.registro;
+        return this.anexo;
     }
 
 }

@@ -19,47 +19,51 @@ package es.brainbond.facecli.face;
 
 import java.util.List;
 
-import es.brainbond.facecli.face.generated.ArrayOfSSPPResultadoConsultarFactura;
-import es.brainbond.facecli.face.generated.ArrayOfSSPPUnidadDir;
-import es.brainbond.facecli.face.generated.SSPPEstados;
-import es.brainbond.facecli.face.generated.SSPPResultadoAnularFactura;
-import es.brainbond.facecli.face.generated.SSPPResultadoConsultarFactura;
-import es.brainbond.facecli.face.generated.SSPPResultadoConsultarUnidades;
-import es.brainbond.facecli.face.generated.SSPPResultadoEnviarFactura;
+import es.brainbond.facecli.face.generated.AnularFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarAdminitracionesResponse;
+import es.brainbond.facecli.face.generated.ConsultarEstadosResponse;
+import es.brainbond.facecli.face.generated.ConsultarFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarListadoFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarRelacionesPorAdministracionResponse;
+import es.brainbond.facecli.face.generated.ConsultarRelacionesResponse;
+import es.brainbond.facecli.face.generated.EnviarFacturaResponse;
 
 public interface FaceService {
 
-    public SSPPResultadoEnviarFactura enviarFactura(
+    public EnviarFacturaResponse enviarFactura(
             String correo,
             String rutaFactura);
     
-    public void printSSPPResultadoEnviarFactura(SSPPResultadoEnviarFactura response);
+    public void printEnviarFacturaResponse(EnviarFacturaResponse response);
     
-    public SSPPResultadoConsultarFactura consultarFactura(String codigoRegistro);
+    public ConsultarFacturaResponse consultarFactura(String codigoRegistro);
     
-    public void printSSPPResultadoConsultarFactura(SSPPResultadoConsultarFactura response);
+    public void printConsultarFacturaResponse(ConsultarFacturaResponse response);
     
-    public SSPPResultadoAnularFactura anularFactura(String numeroRegistro, String motivo);
+    public AnularFacturaResponse anularFactura(String numeroRegistro, String motivo);
     
-    public void printSSPPResultadoAnularFactura(SSPPResultadoAnularFactura response);
+    public void printAnularFacturaResponse(AnularFacturaResponse response);
     
-    public SSPPEstados estados();
+    public ConsultarEstadosResponse estados();
     
-    public void printSSPPEstados(SSPPEstados response);
+    public void printConsultarEstadosResponse(ConsultarEstadosResponse response);
     
-    public SSPPResultadoConsultarUnidades unidades();
+    public ConsultarRelacionesResponse unidades();
     
-    public void printSSPPResultadoConsultarUnidades(SSPPResultadoConsultarUnidades response);
+    public void printConsultarRelacionesResponse(ConsultarRelacionesResponse response);
     
-    public ArrayOfSSPPUnidadDir administraciones();
+    public ConsultarAdminitracionesResponse administraciones();
     
-    public void printArrayOfSSPPUnidadDir(ArrayOfSSPPUnidadDir response);
+    public void printConsultarAdminitracionesResponse(ConsultarAdminitracionesResponse response);
     
-    public SSPPResultadoConsultarUnidades unidadesPorAdministracion(String codigoDir);
+    public ConsultarRelacionesPorAdministracionResponse unidadesPorAdministracion(String codigoDir);
 
-    public ArrayOfSSPPResultadoConsultarFactura consultarListadoFacturas(
-            List<String> codigosRegistro);
+    public void printConsultarRelacionesPorAdministracionResponse(
+            ConsultarRelacionesPorAdministracionResponse response);
+    
+    public ConsultarListadoFacturaResponse consultarListadoFacturas(
+            List<String> numerosRegistro);
 
-    public void printArrayOfSSPPResultadoConsultarFactura(
-            ArrayOfSSPPResultadoConsultarFactura response);
+    public void printConsultarListadoFacturaResponse(
+            ConsultarListadoFacturaResponse response);
 }

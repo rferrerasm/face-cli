@@ -8,23 +8,23 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPResultadoEnviarFactura complex type.
+ * <p>Java class for EnviarFactura complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPResultadoEnviarFactura"&gt;
+ * &lt;complexType name="EnviarFactura"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="codigo_registro" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="organo_gestor" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="unidad_tramitadora" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="oficina_contable" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="identificador_emisor" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="numero_factura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="serie_factura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="fecha_recepcion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="numeroRegistro" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="organoGestor" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="unidadTramitadora" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="oficinaContable" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="identificadorEmisor" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="numeroFactura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="serieFactura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="fechaRecepcion" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -34,54 +34,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPResultadoEnviarFactura", propOrder = {
+@XmlType(name = "EnviarFactura", propOrder = {
 
 })
-public class SSPPResultadoEnviarFactura {
+public class EnviarFactura {
 
-    @XmlElement(name = "codigo_registro", required = true, nillable = true)
-    protected String codigoRegistro;
-    @XmlElement(name = "organo_gestor", required = true, nillable = true)
+    @XmlElement(required = true)
+    protected String numeroRegistro;
+    @XmlElement(required = true)
     protected String organoGestor;
-    @XmlElement(name = "unidad_tramitadora", required = true, nillable = true)
+    @XmlElement(required = true)
     protected String unidadTramitadora;
-    @XmlElement(name = "oficina_contable", required = true, nillable = true)
+    @XmlElement(required = true)
     protected String oficinaContable;
-    @XmlElement(name = "identificador_emisor", required = true, nillable = true)
+    @XmlElement(required = true)
     protected String identificadorEmisor;
-    @XmlElement(name = "numero_factura", required = true, nillable = true)
+    @XmlElement(required = true, nillable = true)
     protected String numeroFactura;
-    @XmlElement(name = "serie_factura", required = true, nillable = true)
+    @XmlElement(required = true, nillable = true)
     protected String serieFactura;
-    @XmlElement(name = "fecha_recepcion", required = true, nillable = true)
+    @XmlElement(required = true)
     protected String fechaRecepcion;
 
     /**
-     * Obtiene el valor de la propiedad codigoRegistro.
+     * Gets the value of the numeroRegistro property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCodigoRegistro() {
-        return codigoRegistro;
+    public String getNumeroRegistro() {
+        return numeroRegistro;
     }
 
     /**
-     * Define el valor de la propiedad codigoRegistro.
+     * Sets the value of the numeroRegistro property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCodigoRegistro(String value) {
-        this.codigoRegistro = value;
+    public void setNumeroRegistro(String value) {
+        this.numeroRegistro = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad organoGestor.
+     * Gets the value of the organoGestor property.
      * 
      * @return
      *     possible object is
@@ -93,7 +93,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad organoGestor.
+     * Sets the value of the organoGestor property.
      * 
      * @param value
      *     allowed object is
@@ -105,7 +105,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad unidadTramitadora.
+     * Gets the value of the unidadTramitadora property.
      * 
      * @return
      *     possible object is
@@ -117,7 +117,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad unidadTramitadora.
+     * Sets the value of the unidadTramitadora property.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +129,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad oficinaContable.
+     * Gets the value of the oficinaContable property.
      * 
      * @return
      *     possible object is
@@ -141,7 +141,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad oficinaContable.
+     * Sets the value of the oficinaContable property.
      * 
      * @param value
      *     allowed object is
@@ -153,7 +153,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad identificadorEmisor.
+     * Gets the value of the identificadorEmisor property.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad identificadorEmisor.
+     * Sets the value of the identificadorEmisor property.
      * 
      * @param value
      *     allowed object is
@@ -177,7 +177,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad numeroFactura.
+     * Gets the value of the numeroFactura property.
      * 
      * @return
      *     possible object is
@@ -189,7 +189,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad numeroFactura.
+     * Sets the value of the numeroFactura property.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +201,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad serieFactura.
+     * Gets the value of the serieFactura property.
      * 
      * @return
      *     possible object is
@@ -213,7 +213,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad serieFactura.
+     * Sets the value of the serieFactura property.
      * 
      * @param value
      *     allowed object is
@@ -225,7 +225,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad fechaRecepcion.
+     * Gets the value of the fechaRecepcion property.
      * 
      * @return
      *     possible object is
@@ -237,7 +237,7 @@ public class SSPPResultadoEnviarFactura {
     }
 
     /**
-     * Define el valor de la propiedad fechaRecepcion.
+     * Sets the value of the fechaRecepcion property.
      * 
      * @param value
      *     allowed object is

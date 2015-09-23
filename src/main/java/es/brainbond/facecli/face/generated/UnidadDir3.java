@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPUnidadDir complex type.
+ * <p>Java class for UnidadDir3 complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPUnidadDir"&gt;
+ * &lt;complexType name="UnidadDir3"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="codigo_dir" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="codigo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
@@ -28,42 +28,42 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPUnidadDir", propOrder = {
+@XmlType(name = "UnidadDir3", propOrder = {
 
 })
-public class SSPPUnidadDir {
+public class UnidadDir3 {
 
-    @XmlElement(name = "codigo_dir", required = true, nillable = true)
-    protected String codigoDir;
+    @XmlElement(required = true, nillable = true)
+    protected String codigo;
     @XmlElement(required = true, nillable = true)
     protected String nombre;
 
     /**
-     * Obtiene el valor de la propiedad codigoDir.
+     * Gets the value of the codigo property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getCodigoDir() {
-        return codigoDir;
+    public String getCodigo() {
+        return codigo;
     }
 
     /**
-     * Define el valor de la propiedad codigoDir.
+     * Sets the value of the codigo property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setCodigoDir(String value) {
-        this.codigoDir = value;
+    public void setCodigo(String value) {
+        this.codigo = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class SSPPUnidadDir {
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is

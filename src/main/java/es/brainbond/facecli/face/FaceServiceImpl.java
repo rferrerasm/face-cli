@@ -29,48 +29,51 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import es.brainbond.facecli.face.generated.ArrayConsultarListadoFactura;
-import es.brainbond.facecli.face.generated.ArrayOfSSPPResultadoConsultarFactura;
-import es.brainbond.facecli.face.generated.ArrayOfSSPPUnidadDir;
-import es.brainbond.facecli.face.generated.SSPPEstado;
-import es.brainbond.facecli.face.generated.SSPPEstados;
-import es.brainbond.facecli.face.generated.SSPPFactura;
-import es.brainbond.facecli.face.generated.SSPPFicheroFactura;
-import es.brainbond.facecli.face.generated.SSPPOrganoGestorUnidadTramitadora;
-import es.brainbond.facecli.face.generated.SSPPResultadoAnularFactura;
-import es.brainbond.facecli.face.generated.SSPPResultadoConsultarFactura;
-import es.brainbond.facecli.face.generated.SSPPResultadoConsultarUnidades;
-import es.brainbond.facecli.face.generated.SSPPResultadoEnviarFactura;
-import es.brainbond.facecli.face.generated.SSPPUnidadDir;
-import es.brainbond.facecli.face.generated.SSPPWebServiceProxyPort;
+import es.brainbond.facecli.face.generated.AnularFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarAdminitracionesResponse;
+import es.brainbond.facecli.face.generated.ConsultarEstadosResponse;
+import es.brainbond.facecli.face.generated.ConsultarFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarListadoFactura;
+import es.brainbond.facecli.face.generated.ConsultarListadoFacturaRequest;
+import es.brainbond.facecli.face.generated.ConsultarListadoFacturaResponse;
+import es.brainbond.facecli.face.generated.ConsultarRelacionesPorAdministracionResponse;
+import es.brainbond.facecli.face.generated.ConsultarRelacionesResponse;
+import es.brainbond.facecli.face.generated.EnviarFacturaRequest;
+import es.brainbond.facecli.face.generated.EnviarFacturaResponse;
+import es.brainbond.facecli.face.generated.Estado;
+import es.brainbond.facecli.face.generated.FacturaFile;
+import es.brainbond.facecli.face.generated.FacturaSSPPWebServiceProxyPort;
+import es.brainbond.facecli.face.generated.OGUTOC;
+import es.brainbond.facecli.face.generated.Resultado;
+import es.brainbond.facecli.face.generated.UnidadDir3;
 
 @Service
 public class FaceServiceImpl implements FaceService {
 
-    private SSPPWebServiceProxyPort face;
+    private FacturaSSPPWebServiceProxyPort face;
     
     @Autowired
-    public FaceServiceImpl(SSPPWebServiceProxyPort face) {
+    public FaceServiceImpl(FacturaSSPPWebServiceProxyPort face) {
         this.face = face;
     }
     
     @Override
-    public SSPPResultadoEnviarFactura enviarFactura(String correo, String rutaFactura) {
+    public EnviarFacturaResponse enviarFactura(String correo, String rutaFactura) {
         checkNotNull(correo);
         checkNotNull(rutaFactura);
         
-        SSPPFactura factura = new SSPPFactura();
-        factura.setCorreo(correo);
+        EnviarFacturaRequest request = new EnviarFacturaRequest();
+        request.setCorreo(correo);
         
         Path path = Paths.get(rutaFactura);
         
-        SSPPFicheroFactura fichero = new SSPPFicheroFactura();
-        fichero.setFactura(toBase64(path));
-        fichero.setNombre(path.getFileName().toString());
-        fichero.setMime("application/xml");
-        factura.setFicheroFactura(fichero);
+        FacturaFile factura = new FacturaFile();
+        factura.setFactura(toBase64(path));
+        factura.setNombre(path.getFileName().toString());
+        factura.setMime("application/xml");
+        request.setFactura(factura);
         
-        return face.enviarFactura(factura);
+        return face.enviarFactura(request);
     }
     
     private String toBase64(Path path) {
@@ -83,89 +86,87 @@ public class FaceServiceImpl implements FaceService {
     }
 
     @Override
-    public void printSSPPResultadoEnviarFactura(SSPPResultadoEnviarFactura response) {
+    public void printEnviarFacturaResponse(EnviarFacturaResponse response) {
         checkNotNull(response);
         
         System.out.println("Resultado envío factura:");
         
-        StringBuilder sb = new StringBuilder(100);
-        sb.append("    Código registro: ");
-        sb.append(response.getCodigoRegistro());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Factura:\n");
+        sb.append("        Número registro: ");
+        sb.append(response.getFactura().getNumeroRegistro());
         sb.append('\n');
-        sb.append("    Órgano gestor: ");
-        sb.append(response.getOrganoGestor());
+        sb.append("        Órgano gestor: ");
+        sb.append(response.getFactura().getOrganoGestor());
         sb.append('\n');
-        sb.append("    Unidad tramitadora: ");
-        sb.append(response.getUnidadTramitadora());
+        sb.append("        Unidad tramitadora: ");
+        sb.append(response.getFactura().getUnidadTramitadora());
         sb.append('\n');
-        sb.append("    Oficina contable: ");
-        sb.append(response.getOficinaContable());
+        sb.append("        Oficina contable: ");
+        sb.append(response.getFactura().getOficinaContable());
         sb.append('\n');
-        sb.append("    Identificador emisor: ");
-        sb.append(response.getIdentificadorEmisor());
+        sb.append("        Identificador emisor: ");
+        sb.append(response.getFactura().getIdentificadorEmisor());
         sb.append('\n');
-        sb.append("    Número factura: ");
-        sb.append(response.getNumeroFactura());
+        sb.append("        Número factura: ");
+        sb.append(response.getFactura().getNumeroFactura());
         sb.append('\n');
-        sb.append("    Serie factura: ");
-        sb.append(response.getSerieFactura());
+        sb.append("        Serie factura: ");
+        sb.append(response.getFactura().getSerieFactura());
         sb.append('\n');
-        sb.append("    Fecha recepción: ");
-        sb.append(response.getFechaRecepcion());
+        sb.append("        Fecha recepción: ");
+        sb.append(response.getFactura().getFechaRecepcion());
         sb.append('\n');
         
         System.out.print(sb.toString());
     }
 
     @Override
-    public SSPPResultadoConsultarFactura consultarFactura(String codigoRegistro) {
+    public ConsultarFacturaResponse consultarFactura(String codigoRegistro) {
         checkNotNull(codigoRegistro);
         
         return face.consultarFactura(codigoRegistro);
     }
 
     @Override
-    public void printSSPPResultadoConsultarFactura(SSPPResultadoConsultarFactura response) {
+    public void printConsultarFacturaResponse(ConsultarFacturaResponse response) {
         checkNotNull(response);
         
         System.out.println("Resultado consultar factura:");
         
-        StringBuilder sb = new StringBuilder(100);
-        sb.append("    Código registro: ");
-        sb.append(response.getNumeroRegistro());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Factura:\n");
+        sb.append("        Número registro: ");
+        sb.append(response.getFactura().getNumeroRegistro());
         sb.append('\n');
-        
-        if (response.getTramitacion() != null) {
-            sb.append("    Tramitación: \n");
-            sb.append("        Código estado: ");
-            sb.append(response.getTramitacion().getCodigoEstado());
-            sb.append('\n');
-            sb.append("        Descripción estado: ");
-            sb.append(response.getTramitacion().getDescripcionEstado());
-            sb.append('\n');
-            sb.append("        Motivo estado: ");
-            sb.append(response.getTramitacion().getMotivoEstado());
-            sb.append('\n');
-        }
-        
-        if (response.getAnulacion() != null) {
-            sb.append("    Anulación: \n");
-            sb.append("        Código estado: ");
-            sb.append(response.getTramitacion().getCodigoEstado());
-            sb.append('\n');
-            sb.append("        Descripción estado: ");
-            sb.append(response.getTramitacion().getDescripcionEstado());
-            sb.append('\n');
-            sb.append("        Motivo estado: ");
-            sb.append(response.getTramitacion().getMotivoEstado());
-            sb.append('\n');
-        }
+        sb.append("        Tramitación: \n");
+        sb.append("            Código: ");
+        sb.append(response.getFactura().getTramitacion().getCodigo());
+        sb.append('\n');
+        sb.append("            Descripción: ");
+        sb.append(response.getFactura().getTramitacion().getDescripcion());
+        sb.append('\n');
+        sb.append("            Motivo: ");
+        sb.append(response.getFactura().getTramitacion().getMotivo());
+        sb.append('\n');
+        sb.append("        Anulación: \n");
+        sb.append("            Código: ");
+        sb.append(response.getFactura().getTramitacion().getCodigo());
+        sb.append('\n');
+        sb.append("            Descripción: ");
+        sb.append(response.getFactura().getTramitacion().getDescripcion());
+        sb.append('\n');
+        sb.append("            Motivo: ");
+        sb.append(response.getFactura().getTramitacion().getMotivo());
+        sb.append('\n');
         
         System.out.print(sb.toString());
     }
     
     @Override
-    public SSPPResultadoAnularFactura anularFactura(String numeroRegistro, String motivo) {
+    public AnularFacturaResponse anularFactura(String numeroRegistro, String motivo) {
         checkNotNull(numeroRegistro);
         checkNotNull(motivo);
         
@@ -173,166 +174,225 @@ public class FaceServiceImpl implements FaceService {
     }
     
     @Override
-    public void printSSPPResultadoAnularFactura(SSPPResultadoAnularFactura response) {
+    public void printAnularFacturaResponse(AnularFacturaResponse response) {
         checkNotNull(response);
         
         System.out.println("Resultado anular factura:");
         
-        StringBuilder sb = new StringBuilder(100);
-        sb.append("    Número registro: ");
-        sb.append(response.getNumeroRegistro());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Factura:\n");
+        sb.append("        Número registro: ");
+        sb.append(response.getFactura().getNumeroRegistro());
         sb.append('\n');
-        sb.append("    Mensaje: ");
-        sb.append(response.getMensaje());
+        sb.append("        Mensaje: ");
+        sb.append(response.getFactura().getMensaje());
         sb.append('\n');
         
         System.out.print(sb.toString());
     }
     
     @Override
-    public SSPPEstados estados() {
+    public ConsultarEstadosResponse estados() {
         return face.consultarEstados();
     }
 
     @Override
-    public void printSSPPEstados(SSPPEstados response) {
+    public void printConsultarEstadosResponse(ConsultarEstadosResponse response) {
         checkNotNull(response);
         
         System.out.println("Estados:");
         
-        for (SSPPEstado estado: response.getEstados().getSSPPEstado()) {
-            StringBuilder sb = new StringBuilder(100);
-            sb.append("    ");
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Estados:\n");
+        
+        for (Estado estado: response.getEstados().getEstado()) {
+            sb.append("        ");
             sb.append(estado.getNombre());
             sb.append(", ");
             sb.append(estado.getCodigo());
             sb.append(", ");
             sb.append(estado.getDescripcion());
             sb.append('\n');
-            
-            System.out.print(sb.toString());
         }
+        
+        System.out.print(sb.toString());
     }
 
     @Override
-    public SSPPResultadoConsultarUnidades unidades() {
+    public ConsultarRelacionesResponse unidades() {
         return face.consultarUnidades();
     }
 
     @Override
-    public void printSSPPResultadoConsultarUnidades(SSPPResultadoConsultarUnidades response) {
+    public void printConsultarRelacionesResponse(ConsultarRelacionesResponse response) {
         checkNotNull(response);
         
         System.out.println("Unidades:");
         
-        for (SSPPOrganoGestorUnidadTramitadora unidad:
-                response.getUnidades().getSSPPOrganoGestorUnidadTramitadora()) {
-            
-            StringBuilder sb = new StringBuilder(100);
-            sb.append("    - Órgano Gestor: ");
-            sb.append(unidad.getOrganoGestor().getCodigoDir());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Unidades:\n");
+        
+        for (OGUTOC unidad: response.getRelaciones().getRelacion()) {
+            sb.append("        - Órgano Gestor: ");
+            sb.append(unidad.getOrganoGestor().getCodigo());
             sb.append(", ");
             sb.append(unidad.getOrganoGestor().getNombre());
             sb.append('\n');
-            sb.append("      Unidad Tramitadora: ");
-            sb.append(unidad.getUnidadTramitadora().getCodigoDir());
+            sb.append("          Unidad Tramitadora: ");
+            sb.append(unidad.getUnidadTramitadora().getCodigo());
             sb.append(", ");
             sb.append(unidad.getUnidadTramitadora().getNombre());
             sb.append('\n');
-            sb.append("      Oficina Contable: ");
-            sb.append(unidad.getOficinaContable().getCodigoDir());
+            sb.append("          Oficina Contable: ");
+            sb.append(unidad.getOficinaContable().getCodigo());
             sb.append(", ");
             sb.append(unidad.getOficinaContable().getNombre());
             sb.append('\n');
-            
-            System.out.print(sb.toString());
         }
+        
+        System.out.print(sb.toString());
     }
 
     @Override
-    public ArrayOfSSPPUnidadDir administraciones() {
+    public ConsultarAdminitracionesResponse administraciones() {
         return face.consultarAdministraciones();
     }
 
     @Override
-    public void printArrayOfSSPPUnidadDir(ArrayOfSSPPUnidadDir response) {
+    public void printConsultarAdminitracionesResponse(ConsultarAdminitracionesResponse response) {
         checkNotNull(response);
         
-        System.out.println("Unidades:");
+        System.out.println("Administraciones:");
         
-        for (SSPPUnidadDir unidad: response.getSSPPUnidadDir()) {
-            StringBuilder sb = new StringBuilder(100);
-            sb.append("    ");
-            sb.append(unidad.getCodigoDir());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Administraciones:\n");
+        
+        for (UnidadDir3 unidad: response.getAdministraciones().getAdministracion()) {
+            sb.append("        ");
+            sb.append(unidad.getCodigo());
             sb.append(", ");
             sb.append(unidad.getNombre());
             sb.append('\n');
-            
-            System.out.print(sb.toString());
         }
+        
+        System.out.print(sb.toString());
     }
 
     @Override
-    public SSPPResultadoConsultarUnidades unidadesPorAdministracion(String codigoDir) {
+    public ConsultarRelacionesPorAdministracionResponse unidadesPorAdministracion(String codigoDir) {
         checkNotNull(codigoDir);
         
         return face.consultarUnidadesPorAdministracion(codigoDir);
     }
 
     @Override
-    public ArrayOfSSPPResultadoConsultarFactura consultarListadoFacturas(
-            List<String> codigosRegistro) {
+    public void printConsultarRelacionesPorAdministracionResponse(
+            ConsultarRelacionesPorAdministracionResponse response) {
         
-        checkNotNull(codigosRegistro);
+        checkNotNull(response);
         
-        ArrayConsultarListadoFactura listadoFacturas = new ArrayConsultarListadoFactura();
+        System.out.println("Unidades:");
         
-        codigosRegistro.forEach(cr -> listadoFacturas.getRegistro().add(cr));
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Unidades:\n");
         
-        return face.consultarListadoFacturas(listadoFacturas);
+        for (OGUTOC unidad: response.getRelaciones().getRelacion()) {
+            sb.append("        - Órgano Gestor: ");
+            sb.append(unidad.getOrganoGestor().getCodigo());
+            sb.append(", ");
+            sb.append(unidad.getOrganoGestor().getNombre());
+            sb.append('\n');
+            sb.append("          Unidad Tramitadora: ");
+            sb.append(unidad.getUnidadTramitadora().getCodigo());
+            sb.append(", ");
+            sb.append(unidad.getUnidadTramitadora().getNombre());
+            sb.append('\n');
+            sb.append("          Oficina Contable: ");
+            sb.append(unidad.getOficinaContable().getCodigo());
+            sb.append(", ");
+            sb.append(unidad.getOficinaContable().getNombre());
+            sb.append('\n');
+        }
+        
+        System.out.print(sb.toString());
     }
 
     @Override
-    public void printArrayOfSSPPResultadoConsultarFactura(
-            ArrayOfSSPPResultadoConsultarFactura response) {
+    public ConsultarListadoFacturaResponse consultarListadoFacturas(
+            List<String> numerosRegistro) {
+        
+        checkNotNull(numerosRegistro);
+        
+        ConsultarListadoFacturaRequest request = new ConsultarListadoFacturaRequest();
+        
+        numerosRegistro.forEach(cr -> request.getNumeroRegistro().add(cr));
+        
+        return face.consultarListadoFacturas(request);
+    }
+
+    @Override
+    public void printConsultarListadoFacturaResponse(
+            ConsultarListadoFacturaResponse response) {
         
         checkNotNull(response);
         
         System.out.println("Resultado consultar facturas:");
         
-        for (SSPPResultadoConsultarFactura resultado: response.getSSPPResultadoConsultarFactura()) {
-            StringBuilder sb = new StringBuilder(100);
-            sb.append("    ");
-            sb.append(resultado.getNumeroRegistro());
+        StringBuilder sb = new StringBuilder();
+        printResultado(response.getResultado(), sb);
+        sb.append("    Facturas:\n");
+        
+        for (ConsultarListadoFactura factura: response.getFacturas().getConsultarListadoFactura()) {
+            sb.append("    - Código ");
+            sb.append(factura.getCodigo());
             sb.append('\n');
-            
-            if (resultado.getTramitacion() != null) {
-                sb.append("        Tramitación: \n");
-                sb.append("            Código estado: ");
-                sb.append(resultado.getTramitacion().getCodigoEstado());
-                sb.append('\n');
-                sb.append("            Descripción estado: ");
-                sb.append(resultado.getTramitacion().getDescripcionEstado());
-                sb.append('\n');
-                sb.append("            Motivo estado: ");
-                sb.append(resultado.getTramitacion().getMotivoEstado());
-                sb.append('\n');
-            }
-            
-            if (resultado.getAnulacion() != null) {
-                sb.append("        Anulación: \n");
-                sb.append("            Código estado: ");
-                sb.append(resultado.getTramitacion().getCodigoEstado());
-                sb.append('\n');
-                sb.append("            Descripción estado: ");
-                sb.append(resultado.getTramitacion().getDescripcionEstado());
-                sb.append('\n');
-                sb.append("            Motivo estado: ");
-                sb.append(resultado.getTramitacion().getMotivoEstado());
-                sb.append('\n');
-            }
-            
-            System.out.print(sb.toString());
+            sb.append("      Descripción ");
+            sb.append(factura.getDescripcion());
+            sb.append('\n');
+            sb.append("      Factura:\n");
+            sb.append("          Número registro: ");
+            sb.append(factura.getFactura().getNumeroRegistro());
+            sb.append('\n');
+            sb.append("          Tramitación: \n");
+            sb.append("              Código: ");
+            sb.append(factura.getFactura().getTramitacion().getCodigo());
+            sb.append('\n');
+            sb.append("              Descripción: ");
+            sb.append(factura.getFactura().getTramitacion().getDescripcion());
+            sb.append('\n');
+            sb.append("              Motivo: ");
+            sb.append(factura.getFactura().getTramitacion().getMotivo());
+            sb.append('\n');
+            sb.append("          Anulación: \n");
+            sb.append("              Código: ");
+            sb.append(factura.getFactura().getTramitacion().getCodigo());
+            sb.append('\n');
+            sb.append("              Descripción: ");
+            sb.append(factura.getFactura().getTramitacion().getDescripcion());
+            sb.append('\n');
+            sb.append("              Motivo: ");
+            sb.append(factura.getFactura().getTramitacion().getMotivo());
+            sb.append('\n');
         }
+        
+        System.out.print(sb.toString());
+    }
+    
+    private void printResultado(Resultado resultado, StringBuilder sb) {
+        sb.append("    Resultado:\n");
+        sb.append("        Código: ");
+        sb.append(resultado.getCodigo());
+        sb.append('\n');
+        sb.append("        Descripción: ");
+        sb.append(resultado.getDescripcion());
+        sb.append('\n');
+        sb.append("        Código seguimiento: ");
+        sb.append(resultado.getCodigoSeguimiento());
+        sb.append('\n');
     }
 }

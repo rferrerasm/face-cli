@@ -5,21 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ArrayOfSSPPEstado complex type.
+ * <p>Java class for ConsultarListadoFacturaRequest complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ArrayOfSSPPEstado"&gt;
+ * &lt;complexType name="ConsultarListadoFacturaRequest"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="SSPPEstado" type="{https://webservice.face.gob.es}SSPPEstado" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="numeroRegistro" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,41 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayOfSSPPEstado", propOrder = {
-    "ssppEstado"
+@XmlType(name = "ConsultarListadoFacturaRequest", propOrder = {
+    "numeroRegistro"
 })
-public class ArrayOfSSPPEstado {
+public class ConsultarListadoFacturaRequest {
 
-    @XmlElement(name = "SSPPEstado")
-    protected List<SSPPEstado> ssppEstado;
+    protected List<String> numeroRegistro;
 
     /**
-     * Gets the value of the ssppEstado property.
+     * Gets the value of the numeroRegistro property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ssppEstado property.
+     * This is why there is not a <CODE>set</CODE> method for the numeroRegistro property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSSPPEstado().add(newItem);
+     *    getNumeroRegistro().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SSPPEstado }
+     * {@link String }
      * 
      * 
      */
-    public List<SSPPEstado> getSSPPEstado() {
-        if (ssppEstado == null) {
-            ssppEstado = new ArrayList<SSPPEstado>();
+    public List<String> getNumeroRegistro() {
+        if (numeroRegistro == null) {
+            numeroRegistro = new ArrayList<String>();
         }
-        return this.ssppEstado;
+        return this.numeroRegistro;
     }
 
 }

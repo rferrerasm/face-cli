@@ -109,7 +109,8 @@ Generación del código Java del servicio
 Se utiliza el servicio web de test con el estilo RPC/Literal.
 
 El fichero WSDL del servicio se encuentra copiado localmente en
-`src/main/resources/sspp2.wsdl`. Fue descargado el 27/08/2015.
+`src/main/resources/sspp2.wsdl`. Fue descargado el 23/09/2015
+con las actualizaciones del día 22/09/2015.
 
 Mediante el comando `gradlew exportWsdl` se llama a la aplicación
 `wsdl2java` de CXF que genera las clases Java.

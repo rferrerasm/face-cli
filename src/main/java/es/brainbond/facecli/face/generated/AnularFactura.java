@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPResultadoAnularFactura complex type.
+ * <p>Java class for AnularFactura complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPResultadoAnularFactura"&gt;
+ * &lt;complexType name="AnularFactura"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="numero_registro" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="numeroRegistro" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="mensaje" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
@@ -28,18 +28,18 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPResultadoAnularFactura", propOrder = {
+@XmlType(name = "AnularFactura", propOrder = {
 
 })
-public class SSPPResultadoAnularFactura {
+public class AnularFactura {
 
-    @XmlElement(name = "numero_registro", required = true, nillable = true)
+    @XmlElement(required = true)
     protected String numeroRegistro;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
     protected String mensaje;
 
     /**
-     * Obtiene el valor de la propiedad numeroRegistro.
+     * Gets the value of the numeroRegistro property.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class SSPPResultadoAnularFactura {
     }
 
     /**
-     * Define el valor de la propiedad numeroRegistro.
+     * Sets the value of the numeroRegistro property.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class SSPPResultadoAnularFactura {
     }
 
     /**
-     * Obtiene el valor de la propiedad mensaje.
+     * Gets the value of the mensaje property.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class SSPPResultadoAnularFactura {
     }
 
     /**
-     * Define el valor de la propiedad mensaje.
+     * Sets the value of the mensaje property.
      * 
      * @param value
      *     allowed object is

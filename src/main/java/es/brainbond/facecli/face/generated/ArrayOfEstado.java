@@ -5,21 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ArrayOfSSPPUnidadDir complex type.
+ * <p>Java class for ArrayOfEstado complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="ArrayOfSSPPUnidadDir"&gt;
+ * &lt;complexType name="ArrayOfEstado"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="SSPPUnidadDir" type="{https://webservice.face.gob.es}SSPPUnidadDir" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="estado" type="{https://webservice.face.gob.es}Estado" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,41 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayOfSSPPUnidadDir", propOrder = {
-    "ssppUnidadDir"
+@XmlType(name = "ArrayOfEstado", propOrder = {
+    "estado"
 })
-public class ArrayOfSSPPUnidadDir {
+public class ArrayOfEstado {
 
-    @XmlElement(name = "SSPPUnidadDir")
-    protected List<SSPPUnidadDir> ssppUnidadDir;
+    protected List<Estado> estado;
 
     /**
-     * Gets the value of the ssppUnidadDir property.
+     * Gets the value of the estado property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ssppUnidadDir property.
+     * This is why there is not a <CODE>set</CODE> method for the estado property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSSPPUnidadDir().add(newItem);
+     *    getEstado().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SSPPUnidadDir }
+     * {@link Estado }
      * 
      * 
      */
-    public List<SSPPUnidadDir> getSSPPUnidadDir() {
-        if (ssppUnidadDir == null) {
-            ssppUnidadDir = new ArrayList<SSPPUnidadDir>();
+    public List<Estado> getEstado() {
+        if (estado == null) {
+            estado = new ArrayList<Estado>();
         }
-        return this.ssppUnidadDir;
+        return this.estado;
     }
 
 }

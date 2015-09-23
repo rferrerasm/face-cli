@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para SSPPFicheroAnexo complex type.
+ * <p>Java class for FacturaFile complex type.
  * 
- * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="SSPPFicheroAnexo"&gt;
+ * &lt;complexType name="FacturaFile"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
- *         &lt;element name="anexo" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="factura" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="mime" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
@@ -29,44 +29,44 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "SSPPFicheroAnexo", propOrder = {
+@XmlType(name = "FacturaFile", propOrder = {
 
 })
-public class SSPPFicheroAnexo {
+public class FacturaFile {
 
-    @XmlElement(required = true, nillable = true)
-    protected String anexo;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
+    protected String factura;
+    @XmlElement(required = true)
     protected String nombre;
-    @XmlElement(required = true, nillable = true)
+    @XmlElement(required = true)
     protected String mime;
 
     /**
-     * Obtiene el valor de la propiedad anexo.
+     * Gets the value of the factura property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAnexo() {
-        return anexo;
+    public String getFactura() {
+        return factura;
     }
 
     /**
-     * Define el valor de la propiedad anexo.
+     * Sets the value of the factura property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAnexo(String value) {
-        this.anexo = value;
+    public void setFactura(String value) {
+        this.factura = value;
     }
 
     /**
-     * Obtiene el valor de la propiedad nombre.
+     * Gets the value of the nombre property.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class SSPPFicheroAnexo {
     }
 
     /**
-     * Define el valor de la propiedad nombre.
+     * Sets the value of the nombre property.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +90,7 @@ public class SSPPFicheroAnexo {
     }
 
     /**
-     * Obtiene el valor de la propiedad mime.
+     * Gets the value of the mime property.
      * 
      * @return
      *     possible object is
@@ -102,7 +102,7 @@ public class SSPPFicheroAnexo {
     }
 
     /**
-     * Define el valor de la propiedad mime.
+     * Sets the value of the mime property.
      * 
      * @param value
      *     allowed object is
