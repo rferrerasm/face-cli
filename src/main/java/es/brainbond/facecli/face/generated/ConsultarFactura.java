@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ConsultarFactura complex type.
+ * <p>Clase Java para ConsultarFactura complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="ConsultarFactura"&gt;
@@ -42,7 +42,7 @@ public class ConsultarFactura {
     protected EstadoFactura anulacion;
 
     /**
-     * Gets the value of the numeroRegistro property.
+     * Obtiene el valor de la propiedad numeroRegistro.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class ConsultarFactura {
     }
 
     /**
-     * Sets the value of the numeroRegistro property.
+     * Define el valor de la propiedad numeroRegistro.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class ConsultarFactura {
     }
 
     /**
-     * Gets the value of the tramitacion property.
+     * Obtiene el valor de la propiedad tramitacion.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class ConsultarFactura {
     }
 
     /**
-     * Sets the value of the tramitacion property.
+     * Define el valor de la propiedad tramitacion.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +90,7 @@ public class ConsultarFactura {
     }
 
     /**
-     * Gets the value of the anulacion property.
+     * Obtiene el valor de la propiedad anulacion.
      * 
      * @return
      *     possible object is
@@ -102,7 +102,7 @@ public class ConsultarFactura {
     }
 
     /**
-     * Sets the value of the anulacion property.
+     * Define el valor de la propiedad anulacion.
      * 
      * @param value
      *     allowed object is

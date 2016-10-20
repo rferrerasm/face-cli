@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para ArrayOfAdministracion complex type.
+ * <p>Clase Java para ArrayOfOGNIFs complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="ArrayOfAdministracion"&gt;
+ * &lt;complexType name="ArrayOfOGNIFs"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="administracion" type="{https://webservice.face.gob.es}UnidadDir3" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="info" type="{https://webservice.face.gob.es}OGNIFs" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,40 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "ArrayOfAdministracion", propOrder = {
-    "administracion"
+@XmlType(name = "ArrayOfOGNIFs", propOrder = {
+    "info"
 })
-public class ArrayOfAdministracion {
+public class ArrayOfOGNIFs {
 
-    protected List<UnidadDir3> administracion;
+    protected List<OGNIFs> info;
 
     /**
-     * Gets the value of the administracion property.
+     * Gets the value of the info property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the administracion property.
+     * This is why there is not a <CODE>set</CODE> method for the info property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAdministracion().add(newItem);
+     *    getInfo().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link UnidadDir3 }
+     * {@link OGNIFs }
      * 
      * 
      */
-    public List<UnidadDir3> getAdministracion() {
-        if (administracion == null) {
-            administracion = new ArrayList<UnidadDir3>();
+    public List<OGNIFs> getInfo() {
+        if (info == null) {
+            info = new ArrayList<OGNIFs>();
         }
-        return this.administracion;
+        return this.info;
     }
 
 }

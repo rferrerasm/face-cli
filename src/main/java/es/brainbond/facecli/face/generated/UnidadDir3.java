@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for UnidadDir3 complex type.
+ * <p>Clase Java para UnidadDir3 complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="UnidadDir3"&gt;
@@ -39,7 +39,7 @@ public class UnidadDir3 {
     protected String nombre;
 
     /**
-     * Gets the value of the codigo property.
+     * Obtiene el valor de la propiedad codigo.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class UnidadDir3 {
     }
 
     /**
-     * Sets the value of the codigo property.
+     * Define el valor de la propiedad codigo.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class UnidadDir3 {
     }
 
     /**
-     * Gets the value of the nombre property.
+     * Obtiene el valor de la propiedad nombre.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class UnidadDir3 {
     }
 
     /**
-     * Sets the value of the nombre property.
+     * Define el valor de la propiedad nombre.
      * 
      * @param value
      *     allowed object is

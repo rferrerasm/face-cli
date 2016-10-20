@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Solicitud complex type.
+ * <p>Clase Java para Solicitud complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="Solicitud"&gt;
@@ -36,7 +36,7 @@ public class Solicitud {
     protected String numSolicitud;
 
     /**
-     * Gets the value of the numSolicitud property.
+     * Obtiene el valor de la propiedad numSolicitud.
      * 
      * @return
      *     possible object is
@@ -48,7 +48,7 @@ public class Solicitud {
     }
 
     /**
-     * Sets the value of the numSolicitud property.
+     * Define el valor de la propiedad numSolicitud.
      * 
      * @param value
      *     allowed object is

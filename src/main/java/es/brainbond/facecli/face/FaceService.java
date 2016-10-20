@@ -20,7 +20,7 @@ package es.brainbond.facecli.face;
 import java.util.List;
 
 import es.brainbond.facecli.face.generated.AnularFacturaResponse;
-import es.brainbond.facecli.face.generated.ConsultarAdminitracionesResponse;
+import es.brainbond.facecli.face.generated.ConsultarAdministracionesResponse;
 import es.brainbond.facecli.face.generated.ConsultarEstadosResponse;
 import es.brainbond.facecli.face.generated.ConsultarFacturaResponse;
 import es.brainbond.facecli.face.generated.ConsultarListadoFacturaResponse;
@@ -52,9 +52,9 @@ public interface FaceService {
     
     public void printConsultarRelacionesResponse(ConsultarRelacionesResponse response);
     
-    public ConsultarAdminitracionesResponse administraciones();
+    public ConsultarAdministracionesResponse administraciones();
     
-    public void printConsultarAdminitracionesResponse(ConsultarAdminitracionesResponse response);
+    public void printConsultarAdminitracionesResponse(ConsultarAdministracionesResponse response);
     
     public ConsultarRelacionesPorAdministracionResponse unidadesPorAdministracion(String codigoDir);
 

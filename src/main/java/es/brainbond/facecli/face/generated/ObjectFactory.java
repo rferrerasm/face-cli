@@ -102,6 +102,38 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link OGNIFs }
+     * 
+     */
+    public OGNIFs createOGNIFs() {
+        return new OGNIFs();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfOGNIFs }
+     * 
+     */
+    public ArrayOfOGNIFs createArrayOfOGNIFs() {
+        return new ArrayOfOGNIFs();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarNIFsResponse }
+     * 
+     */
+    public ConsultarNIFsResponse createConsultarNIFsResponse() {
+        return new ConsultarNIFsResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarNIFsPorAdministracionResponse }
+     * 
+     */
+    public ConsultarNIFsPorAdministracionResponse createConsultarNIFsPorAdministracionResponse() {
+        return new ConsultarNIFsPorAdministracionResponse();
+    }
+
+    /**
      * Create an instance of {@link FacturaFile }
      * 
      */
@@ -230,11 +262,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ConsultarAdminitracionesResponse }
+     * Create an instance of {@link ConsultarAdministracionesResponse }
      * 
      */
-    public ConsultarAdminitracionesResponse createConsultarAdminitracionesResponse() {
-        return new ConsultarAdminitracionesResponse();
+    public ConsultarAdministracionesResponse createConsultarAdministracionesResponse() {
+        return new ConsultarAdministracionesResponse();
+    }
+
+    /**
+     * Create an instance of {@link ConsultarAdministracionesRepositorioResponse }
+     * 
+     */
+    public ConsultarAdministracionesRepositorioResponse createConsultarAdministracionesRepositorioResponse() {
+        return new ConsultarAdministracionesRepositorioResponse();
     }
 
     /**

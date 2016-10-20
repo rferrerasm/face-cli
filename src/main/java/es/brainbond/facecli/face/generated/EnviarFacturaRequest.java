@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EnviarFacturaRequest complex type.
+ * <p>Clase Java para EnviarFacturaRequest complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="EnviarFacturaRequest"&gt;
@@ -42,7 +42,7 @@ public class EnviarFacturaRequest {
     protected ArrayOfAnexoFile anexos;
 
     /**
-     * Gets the value of the correo property.
+     * Obtiene el valor de la propiedad correo.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class EnviarFacturaRequest {
     }
 
     /**
-     * Sets the value of the correo property.
+     * Define el valor de la propiedad correo.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class EnviarFacturaRequest {
     }
 
     /**
-     * Gets the value of the factura property.
+     * Obtiene el valor de la propiedad factura.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class EnviarFacturaRequest {
     }
 
     /**
-     * Sets the value of the factura property.
+     * Define el valor de la propiedad factura.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +90,7 @@ public class EnviarFacturaRequest {
     }
 
     /**
-     * Gets the value of the anexos property.
+     * Obtiene el valor de la propiedad anexos.
      * 
      * @return
      *     possible object is
@@ -102,7 +102,7 @@ public class EnviarFacturaRequest {
     }
 
     /**
-     * Sets the value of the anexos property.
+     * Define el valor de la propiedad anexos.
      * 
      * @param value
      *     allowed object is

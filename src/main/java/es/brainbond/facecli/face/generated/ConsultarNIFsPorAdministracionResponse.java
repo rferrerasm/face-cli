@@ -8,17 +8,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para EnviarFacturaResponse complex type.
+ * <p>Clase Java para ConsultarNIFsPorAdministracionResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="EnviarFacturaResponse"&gt;
+ * &lt;complexType name="ConsultarNIFsPorAdministracionResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
  *         &lt;element name="resultado" type="{https://webservice.face.gob.es}Resultado"/&gt;
- *         &lt;element name="factura" type="{https://webservice.face.gob.es}EnviarFactura"/&gt;
+ *         &lt;element name="nifs" type="{https://webservice.face.gob.es}ArrayOfOGNIFs"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -28,15 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "EnviarFacturaResponse", propOrder = {
+@XmlType(name = "ConsultarNIFsPorAdministracionResponse", propOrder = {
 
 })
-public class EnviarFacturaResponse {
+public class ConsultarNIFsPorAdministracionResponse {
 
     @XmlElement(required = true)
     protected Resultado resultado;
     @XmlElement(required = true, nillable = true)
-    protected EnviarFactura factura;
+    protected ArrayOfOGNIFs nifs;
 
     /**
      * Obtiene el valor de la propiedad resultado.
@@ -63,27 +63,27 @@ public class EnviarFacturaResponse {
     }
 
     /**
-     * Obtiene el valor de la propiedad factura.
+     * Obtiene el valor de la propiedad nifs.
      * 
      * @return
      *     possible object is
-     *     {@link EnviarFactura }
+     *     {@link ArrayOfOGNIFs }
      *     
      */
-    public EnviarFactura getFactura() {
-        return factura;
+    public ArrayOfOGNIFs getNifs() {
+        return nifs;
     }
 
     /**
-     * Define el valor de la propiedad factura.
+     * Define el valor de la propiedad nifs.
      * 
      * @param value
      *     allowed object is
-     *     {@link EnviarFactura }
+     *     {@link ArrayOfOGNIFs }
      *     
      */
-    public void setFactura(EnviarFactura value) {
-        this.factura = value;
+    public void setNifs(ArrayOfOGNIFs value) {
+        this.nifs = value;
     }
 
 }

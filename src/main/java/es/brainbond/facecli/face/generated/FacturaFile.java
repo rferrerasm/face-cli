@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for FacturaFile complex type.
+ * <p>Clase Java para FacturaFile complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="FacturaFile"&gt;
@@ -42,7 +42,7 @@ public class FacturaFile {
     protected String mime;
 
     /**
-     * Gets the value of the factura property.
+     * Obtiene el valor de la propiedad factura.
      * 
      * @return
      *     possible object is
@@ -54,7 +54,7 @@ public class FacturaFile {
     }
 
     /**
-     * Sets the value of the factura property.
+     * Define el valor de la propiedad factura.
      * 
      * @param value
      *     allowed object is
@@ -66,7 +66,7 @@ public class FacturaFile {
     }
 
     /**
-     * Gets the value of the nombre property.
+     * Obtiene el valor de la propiedad nombre.
      * 
      * @return
      *     possible object is
@@ -78,7 +78,7 @@ public class FacturaFile {
     }
 
     /**
-     * Sets the value of the nombre property.
+     * Define el valor de la propiedad nombre.
      * 
      * @param value
      *     allowed object is
@@ -90,7 +90,7 @@ public class FacturaFile {
     }
 
     /**
-     * Gets the value of the mime property.
+     * Obtiene el valor de la propiedad mime.
      * 
      * @return
      *     possible object is
@@ -102,7 +102,7 @@ public class FacturaFile {
     }
 
     /**
-     * Sets the value of the mime property.
+     * Define el valor de la propiedad mime.
      * 
      * @param value
      *     allowed object is

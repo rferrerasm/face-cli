@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for EnviarFactura complex type.
+ * <p>Clase Java para EnviarFactura complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="EnviarFactura"&gt;
@@ -57,7 +57,7 @@ public class EnviarFactura {
     protected String fechaRecepcion;
 
     /**
-     * Gets the value of the numeroRegistro property.
+     * Obtiene el valor de la propiedad numeroRegistro.
      * 
      * @return
      *     possible object is
@@ -69,7 +69,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the numeroRegistro property.
+     * Define el valor de la propiedad numeroRegistro.
      * 
      * @param value
      *     allowed object is
@@ -81,7 +81,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the organoGestor property.
+     * Obtiene el valor de la propiedad organoGestor.
      * 
      * @return
      *     possible object is
@@ -93,7 +93,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the organoGestor property.
+     * Define el valor de la propiedad organoGestor.
      * 
      * @param value
      *     allowed object is
@@ -105,7 +105,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the unidadTramitadora property.
+     * Obtiene el valor de la propiedad unidadTramitadora.
      * 
      * @return
      *     possible object is
@@ -117,7 +117,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the unidadTramitadora property.
+     * Define el valor de la propiedad unidadTramitadora.
      * 
      * @param value
      *     allowed object is
@@ -129,7 +129,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the oficinaContable property.
+     * Obtiene el valor de la propiedad oficinaContable.
      * 
      * @return
      *     possible object is
@@ -141,7 +141,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the oficinaContable property.
+     * Define el valor de la propiedad oficinaContable.
      * 
      * @param value
      *     allowed object is
@@ -153,7 +153,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the identificadorEmisor property.
+     * Obtiene el valor de la propiedad identificadorEmisor.
      * 
      * @return
      *     possible object is
@@ -165,7 +165,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the identificadorEmisor property.
+     * Define el valor de la propiedad identificadorEmisor.
      * 
      * @param value
      *     allowed object is
@@ -177,7 +177,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the numeroFactura property.
+     * Obtiene el valor de la propiedad numeroFactura.
      * 
      * @return
      *     possible object is
@@ -189,7 +189,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the numeroFactura property.
+     * Define el valor de la propiedad numeroFactura.
      * 
      * @param value
      *     allowed object is
@@ -201,7 +201,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the serieFactura property.
+     * Obtiene el valor de la propiedad serieFactura.
      * 
      * @return
      *     possible object is
@@ -213,7 +213,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the serieFactura property.
+     * Define el valor de la propiedad serieFactura.
      * 
      * @param value
      *     allowed object is
@@ -225,7 +225,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Gets the value of the fechaRecepcion property.
+     * Obtiene el valor de la propiedad fechaRecepcion.
      * 
      * @return
      *     possible object is
@@ -237,7 +237,7 @@ public class EnviarFactura {
     }
 
     /**
-     * Sets the value of the fechaRecepcion property.
+     * Define el valor de la propiedad fechaRecepcion.
      * 
      * @param value
      *     allowed object is

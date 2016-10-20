@@ -30,7 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import es.brainbond.facecli.face.generated.AnularFacturaResponse;
-import es.brainbond.facecli.face.generated.ConsultarAdminitracionesResponse;
+import es.brainbond.facecli.face.generated.ConsultarAdministracionesResponse;
 import es.brainbond.facecli.face.generated.ConsultarEstadosResponse;
 import es.brainbond.facecli.face.generated.ConsultarFacturaResponse;
 import es.brainbond.facecli.face.generated.ConsultarListadoFactura;
@@ -257,12 +257,12 @@ public class FaceServiceImpl implements FaceService {
     }
 
     @Override
-    public ConsultarAdminitracionesResponse administraciones() {
+    public ConsultarAdministracionesResponse administraciones() {
         return face.consultarAdministraciones();
     }
 
     @Override
-    public void printConsultarAdminitracionesResponse(ConsultarAdminitracionesResponse response) {
+    public void printConsultarAdminitracionesResponse(ConsultarAdministracionesResponse response) {
         checkNotNull(response);
         
         System.out.println("Administraciones:");

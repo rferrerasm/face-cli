@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for AnularFactura complex type.
+ * <p>Clase Java para AnularFactura complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="AnularFactura"&gt;
@@ -39,7 +39,7 @@ public class AnularFactura {
     protected String mensaje;
 
     /**
-     * Gets the value of the numeroRegistro property.
+     * Obtiene el valor de la propiedad numeroRegistro.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class AnularFactura {
     }
 
     /**
-     * Sets the value of the numeroRegistro property.
+     * Define el valor de la propiedad numeroRegistro.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class AnularFactura {
     }
 
     /**
-     * Gets the value of the mensaje property.
+     * Obtiene el valor de la propiedad mensaje.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class AnularFactura {
     }
 
     /**
-     * Sets the value of the mensaje property.
+     * Define el valor de la propiedad mensaje.
      * 
      * @param value
      *     allowed object is

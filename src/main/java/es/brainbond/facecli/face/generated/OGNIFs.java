@@ -8,18 +8,17 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para OGUTOC complex type.
+ * <p>Clase Java para OGNIFs complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="OGUTOC"&gt;
+ * &lt;complexType name="OGNIFs"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;all&gt;
  *         &lt;element name="organoGestor" type="{https://webservice.face.gob.es}UnidadDir3"/&gt;
- *         &lt;element name="unidadTramitadora" type="{https://webservice.face.gob.es}UnidadDir3"/&gt;
- *         &lt;element name="oficinaContable" type="{https://webservice.face.gob.es}UnidadDir3"/&gt;
+ *         &lt;element name="nif" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/all&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,17 +28,15 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "OGUTOC", propOrder = {
+@XmlType(name = "OGNIFs", propOrder = {
 
 })
-public class OGUTOC {
+public class OGNIFs {
 
     @XmlElement(required = true, nillable = true)
     protected UnidadDir3 organoGestor;
-    @XmlElement(required = true, nillable = true)
-    protected UnidadDir3 unidadTramitadora;
-    @XmlElement(required = true, nillable = true)
-    protected UnidadDir3 oficinaContable;
+    @XmlElement(required = true)
+    protected String nif;
 
     /**
      * Obtiene el valor de la propiedad organoGestor.
@@ -66,51 +63,27 @@ public class OGUTOC {
     }
 
     /**
-     * Obtiene el valor de la propiedad unidadTramitadora.
+     * Obtiene el valor de la propiedad nif.
      * 
      * @return
      *     possible object is
-     *     {@link UnidadDir3 }
+     *     {@link String }
      *     
      */
-    public UnidadDir3 getUnidadTramitadora() {
-        return unidadTramitadora;
+    public String getNif() {
+        return nif;
     }
 
     /**
-     * Define el valor de la propiedad unidadTramitadora.
+     * Define el valor de la propiedad nif.
      * 
      * @param value
      *     allowed object is
-     *     {@link UnidadDir3 }
+     *     {@link String }
      *     
      */
-    public void setUnidadTramitadora(UnidadDir3 value) {
-        this.unidadTramitadora = value;
-    }
-
-    /**
-     * Obtiene el valor de la propiedad oficinaContable.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UnidadDir3 }
-     *     
-     */
-    public UnidadDir3 getOficinaContable() {
-        return oficinaContable;
-    }
-
-    /**
-     * Define el valor de la propiedad oficinaContable.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UnidadDir3 }
-     *     
-     */
-    public void setOficinaContable(UnidadDir3 value) {
-        this.oficinaContable = value;
+    public void setNif(String value) {
+        this.nif = value;
     }
 
 }

@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for ConsultarListadoFacturasOffLine complex type.
+ * <p>Clase Java para ConsultarListadoFacturasOffLine complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
  * &lt;complexType name="ConsultarListadoFacturasOffLine"&gt;
@@ -39,7 +39,7 @@ public class ConsultarListadoFacturasOffLine {
     protected ArrayOfFacturaOffLine facturas;
 
     /**
-     * Gets the value of the estado property.
+     * Obtiene el valor de la propiedad estado.
      * 
      * @return
      *     possible object is
@@ -51,7 +51,7 @@ public class ConsultarListadoFacturasOffLine {
     }
 
     /**
-     * Sets the value of the estado property.
+     * Define el valor de la propiedad estado.
      * 
      * @param value
      *     allowed object is
@@ -63,7 +63,7 @@ public class ConsultarListadoFacturasOffLine {
     }
 
     /**
-     * Gets the value of the facturas property.
+     * Obtiene el valor de la propiedad facturas.
      * 
      * @return
      *     possible object is
@@ -75,7 +75,7 @@ public class ConsultarListadoFacturasOffLine {
     }
 
     /**
-     * Sets the value of the facturas property.
+     * Define el valor de la propiedad facturas.
      * 
      * @param value
      *     allowed object is
